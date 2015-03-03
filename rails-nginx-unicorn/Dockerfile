@@ -28,7 +28,6 @@ RUN apt-get install -qq -y libmysqlclient-dev
 WORKDIR /app
 ONBUILD ADD Gemfile /app/Gemfile
 ONBUILD ADD Gemfile.lock /app/Gemfile.lock
-ONBUILD ADD config/dblogin.yml.sample /app/config/dblogin.yml
 ONBUILD RUN bundle install --without development test
 ONBUILD ADD . /app
 
